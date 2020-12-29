@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Reminder for Viewer</title>
+    <style>
+      html {
+        display: flex;
+        justify-content: center;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 600px;
+        border: 1px solid #ddd;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        height: 280px;
+        background: url('../assets/banners/email-headers-web-05.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+      }
+      .logo {
+        position: relative;
+        background: url('../assets/icons/logo.svg');
+        left: calc(50% - 28px);
+        top: 30px;
+        height: 45px;
+        width: 45px;
+      }
+      .greeting {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-family: bodyFont;
+        font-size: 25px;
+        left: 50px;
+        top: 100px;
+        width: 280px;
+        color: #eee;
+      }
+      .body-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 395px;
+      }
+      .body-container div {
+        display: block;
+        font-size: 14px;
+        width: 260px;
+        font-family: bodyFont;
+      }
+      .body-container div:first-child {
+        margin-bottom: 3vh;
+      }
+      .body-container div:last-child {
+        margin-top: 2vh;
+      }
+      .body-message-bold {
+        display: block;
+        font-family: titleFont;
+        font-size: 14px;
+      }
+      .body-message-info {
+        font-family: bodyFont;
+      }
+      .body-cta .cta-message:first-child {
+          font-family: titleFont;
+      }
+      .cta-message {
+        display: block;
+      }
+      .cta-button {
+        display: block;
+        background-color: #66e2ae;
+        border: none;
+        padding: 7px 35px;
+        font-family: titleFont;
+        text-decoration: none;
+        color: #000;
+        text-align: center;
+      }
+      .unsubscribe-button {
+        font-family: bodyFont;
+        font-size: 12px;
+        color: #eee;
+      }
+      .footer {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2vh 50px;
+        bottom: 0;
+        background-color: #1b194d
+      }
+      .footer-left {
+        display: flex;
+        justify-content: flex-start;
+      }
+      .footer-icon {
+        height: 20px;
+        margin-right: 10px;
+      }
+      .footer-icon:last-child {
+        height: 25px;
+        margin-top: -3px;
+      }
+      .neutral-color-link {
+          color: #000;
+      }
+      @font-face {
+        font-family: bodyFont;
+        font-style: normal;
+        src: url("../assets/fonts/ITC-Avant-Garde-Gothic-Medium.otf") format("woff")
+      }
+      @font-face {
+        font-family: titleFont;
+        font-style: normal;
+        src: url("../assets/fonts/ITC-Avant-Garde-Gothic-Bold.otf") format("woff")
+      }
+      @font-face {
+        font-family: addictive;
+        font-style: normal;
+        src: url("../assets/fonts/addictive-regular.otf") format("woff");
+      }
+      @font-face {
+        font-family: addictiveCaps;
+        font-style: normal;
+        src: url("../assets/fonts/addictive-caps.otf") format("woff");
+      }
+      /* Smaller Screen */
+      @media only screen and (max-width: 599px) {
+        html {
+          display: block
+        }
+        body {
+          width: 100vw;
+          height: 100vh;
+          border: none;
+        }
+        .header {
+          height: 330px;
+          background: url('../assets/banners/email-header-app-05.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position-y: center;
+        }
+        .header div:nth-last-child(2){
+          left: 0;
+        }
+        .logo {
+        position: relative;
+        background: url('../assets/icons/logo.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        /* left: calc(50vw - 22.5px); */
+        top: 25px;
+        height: 45px;
+        width: 100vw;
+        }
+        .greeting {
+          left: 35px;
+          top: 135px;
+          color: #fff;
+          width: 80vw;
+          font-size: 22px;
+          line-height: 30px;
+        }
+        .body-container {
+          width: 100vw;
+        }
+        .body-container div {
+          display: flex;
+          flex-direction: column;
+          width: 73vw;
+          max-width: 240px;
+        }
+        .cta-button {
+          text-align: center;
+          padding: 7px 10px;
+        }
+        .footer {
+          padding: 2vh 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo"></div>
+      <div class="greeting">
+        <div>Get excited, (NAME). Here are the details of tomorrow's show...</div>
+      </div>
+      </div>
+    </div>
+    <div class="body-container">
+      <div class="body-message">
+          <span class="body-message-bold">WHO: <span class="body-message-info">xxxxx xxxxx</span></span>
+          <span class="body-message-bold">WHEN: <span class="body-message-info">xxxxxxxx</span></span>
+          <span class="body-message-bold">TIME: <span class="body-message-info">xxxxxx</span></span>
+          <span class="body-message-bold">TICKET PRICE: <span class="body-message-info">xxxx</span></span>
+          <span class="body-message-bold">TICKET NUMBER: <span class="body-message-info">xxxxxxxxxxx</span></span>
+      </div>
+      <div class="body-cta">
+        <span class="cta-message">Got questions on how to set up for the best stream of your life?</span>
+        <span class="cta-message">Check out our <a href="https://onteder.com" target="_blank" class="neutral-color-link">FAQ Page</a> or <a href="https://onteder.com" target="_blank" class="neutral-color-link">contact support</a> if you can't find your answer.</span>
+        <br/>
+        <span class="cta-message">Tell all your friends.</span>
+    </div>
+    <div class="body-button">
+        <a href="https://onteder.com" target="_blank" class="cta-button">SHARE THIS SHOW</a>
+      </div>
+    </div>
+        <div class="footer">
+      <div class="footer-left">
+        <a href="https://facebook.com/onteder" target="_blank">
+          <img src="../assets/icons/fb-icon-white.svg" alt="Facebook button" class="footer-icon">
+        </a>
+        <a href="https://instagram.com/" target="_blank">
+          <img src="../assets/icons/ig-icon-white.svg" alt="Instagram button" class="footer-icon">
+        </a>
+        <a href="https://youtube.com/" target="_blank">
+          <img src="../assets/icons/yt-icon-white.svg" alt="YouTube button" class="footer-icon">
+        </a>
+      </div>
+      <div class="footer-right">
+        <a href="#" target="_blank" class="unsubscribe-button">unsubscribe</a>
+      </div>
+    </div>
+  </body>
+</html>
